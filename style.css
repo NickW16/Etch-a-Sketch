@@ -1,0 +1,15 @@
+#box-container {
+    display: flex;
+    background-color: rgb(37, 24, 175);
+    flex-wrap: wrap;
+    width: 640px;
+    margin: 0;
+    padding: 10px;
+}
+
+#box-container div {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(243, 69, 69);
+    margin:0;
+}
