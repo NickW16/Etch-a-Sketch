@@ -1,15 +1,32 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgb(26, 78, 26), rgb(144, 186, 144));
+    margin: 0;
+    height: 100vh;
+}
+
+#title {
+    color: aliceblue;
+    font-size: 30px;
+}
+
 #box-container {
     display: flex;
     background-color: rgb(37, 24, 175);
     flex-wrap: wrap;
     width: 640px;
     margin: 0;
-    padding: 10px;
+    padding: 15px;
 }
 
 #box-container div {
     width: 40px;
     height: 40px;
-    background-color: rgb(243, 69, 69);
+    background-color: rgb(255, 255, 255);
     margin:0;
 }
+
