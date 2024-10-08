@@ -14,12 +14,11 @@ body{
 button {
     font-weight: bold;
     border-width: 3px;
-    border-radius: 3px;
+    border-radius: 5px;
     border-style:solid;
     background-color: rgb(96, 71, 188);
     color: aliceblue;
     padding: 5px;
-    margin: 10px;
 }
 
 button:hover {
@@ -30,10 +29,12 @@ button:hover {
 #input-container {
     display: flex;
     align-items: center;
+    margin: 10px;
+    gap: 10px;
 }
 
 #squareInput {
-    width: 250px;
+    width: 285px;
     height: 25px;
 }
 
@@ -44,6 +45,7 @@ button:hover {
     font-size: 30px;
 }
 
+/* drawing board section */
 #box-container {
     display: flex;
     background-color: rgb(37, 24, 175);
@@ -56,6 +58,7 @@ button:hover {
 #box-container div {
     background-color: rgb(255, 255, 255);
 }
+/* end of drawing board section */
 
 footer {
     width: 100%;
