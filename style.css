@@ -57,3 +57,16 @@ button:hover {
     background-color: rgb(255, 255, 255);
 }
 
+footer {
+    width: 100%;
+    position: relative;
+    bottom:0;
+    left: 0;
+    color: aliceblue;
+    margin-top: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-image: linear-gradient(rgb(96, 71, 188), rgb(36, 14, 59));
+    text-align: center;
+}
+
