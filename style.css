@@ -1,6 +1,7 @@
 body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display:flex;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -8,6 +9,35 @@ body{
     margin: 0;
     height: 100vh;
 }
+
+/* buttons and input section */
+button {
+    font-weight: bold;
+    border-width: 3px;
+    border-radius: 3px;
+    border-style:solid;
+    background-color: rgb(96, 71, 188);
+    color: aliceblue;
+    padding: 5px;
+    margin: 10px;
+}
+
+button:hover {
+    color: black;
+    background-color: aliceblue;
+}
+
+#input-container {
+    display: flex;
+    align-items: center;
+}
+
+#squareInput {
+    width: 250px;
+    height: 25px;
+}
+
+/* end of button section */
 
 #title {
     color: aliceblue;
