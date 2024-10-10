@@ -1,7 +1,7 @@
 let divBox = document.getElementById("box-container");
 
 /*This section makes squares and enables them to be hovered */
-function createSquares(squaresPerRow) {
+function createSquares(squaresPerRow, squareColor = 'black') {
     divBox.textContent = ' '; // Clears existing squares //
 
     // Maximum value for squares
@@ -21,9 +21,20 @@ function createSquares(squaresPerRow) {
         squareDiv.style.width = `${squareSize}px`;
         squareDiv.style.height = `${squareSize}px`;
 
+        /* color randomizer for squares */
+        let colorOne = Math.floor(Math.random() * 256);
+        let colorTwo = Math.floor(Math.random() * 256);
+        let colorThree = Math.floor(Math.random() * 256);
+
+        if (squareColor === 'random') {
         squareDiv.addEventListener('mouseover', function() {
-            squareDiv.style.backgroundColor = "black";
-        });
+            squareDiv.style.backgroundColor = `rgb(${colorOne}, ${colorTwo}, ${colorThree})`;
+        })};
+
+        if (squareColor === 'black') {
+            squareDiv.addEventListener('mouseover', function() {
+                squareDiv.style.backgroundColor = 'black';
+            })};
 
         divBox.appendChild(squareDiv);
     }
@@ -32,6 +43,7 @@ function createSquares(squaresPerRow) {
 /*Initial creation of squares */
 createSquares(16);
 
+// user input function:
 document.querySelector('#createBtn').addEventListener('click', function () {
     let squaresPerRow = parseInt(document.querySelector('#squareInput').value);
     if (!isNaN(squaresPerRow) && squaresPerRow > 0) {
@@ -44,4 +56,14 @@ document.querySelector('#createBtn').addEventListener('click', function () {
 // Reset function section:
 document.querySelector('#resetBtn').addEventListener('click', function () {
     createSquares(16);
+});
+
+// random colors function :
+document.querySelector('#activate-random-colors').addEventListener('click', function () {
+    let squaresPerRow = parseInt(document.querySelector('#squareInput').value);
+    if (!isNaN(squaresPerRow) && squaresPerRow > 0) {
+        createSquares(squaresPerRow, 'random');
+    } else {
+        alert ("Please enter a valid number greater than 0.")
+    };
 });
