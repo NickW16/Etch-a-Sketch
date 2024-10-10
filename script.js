@@ -20,6 +20,7 @@ function createSquares(squaresPerRow, squareColor = 'black') {
         let squareDiv = document.createElement('div');
         squareDiv.style.width = `${squareSize}px`;
         squareDiv.style.height = `${squareSize}px`;
+        squareDiv.style.opacity = '1'; // Default opacity
 
         /* color randomizer for squares */
         let colorOne = Math.floor(Math.random() * 256);
@@ -27,21 +28,23 @@ function createSquares(squaresPerRow, squareColor = 'black') {
         let colorThree = Math.floor(Math.random() * 256);
 
         if (squareColor === 'random') {
-        squareDiv.addEventListener('mouseover', function() {
-            squareDiv.style.backgroundColor = `rgb(${colorOne}, ${colorTwo}, ${colorThree})`;
-        })};
+            squareDiv.addEventListener('mouseover', function() {
+                squareDiv.style.backgroundColor = `rgb(${colorOne}, ${colorTwo}, ${colorThree})`;
+            })};
 
         if (squareColor === 'black') {
             squareDiv.addEventListener('mouseover', function() {
                 squareDiv.style.backgroundColor = 'black';
             })};
 
+
+
         divBox.appendChild(squareDiv);
     }
 };
 
 /*Initial creation of squares */
-createSquares(16);
+createSquares(16, 'black');
 
 // user input function:
 document.querySelector('#createBtn').addEventListener('click', function () {
@@ -64,6 +67,6 @@ document.querySelector('#activate-random-colors').addEventListener('click', func
     if (!isNaN(squaresPerRow) && squaresPerRow > 0) {
         createSquares(squaresPerRow, 'random');
     } else {
-        alert ("Please enter a valid number greater than 0.")
+        createSquares(16, 'random');
     };
 });
