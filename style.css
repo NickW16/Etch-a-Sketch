@@ -50,11 +50,12 @@ button:hover {
 /* drawing board section */
 #box-container {
     display: flex;
-    background-color: rgb(37, 24, 175);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
     flex-wrap: wrap;
     width: 640px;
     margin: 0 auto;
-    padding: 15px;
+    padding: 10px;
 }
 
 #box-container div {
@@ -72,6 +73,12 @@ footer {
     padding-top: 20px;
     padding-bottom: 20px;
     background-image: linear-gradient(rgb(96, 71, 188), rgb(36, 14, 59));
+    text-align: center;
+}
+
+/* Aditional options: */
+
+#options {
     text-align: center;
 }
 

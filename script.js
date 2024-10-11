@@ -1,7 +1,7 @@
 let divBox = document.getElementById("box-container");
 
 /*This section makes squares and enables them to be hovered */
-function createSquares(squaresPerRow, squareColor = 'black') {
+function createSquares(squaresPerRow, squareColor = 'black', opacity = false) {
     divBox.textContent = ' '; // Clears existing squares //
 
     // Maximum value for squares
@@ -20,15 +20,15 @@ function createSquares(squaresPerRow, squareColor = 'black') {
         let squareDiv = document.createElement('div');
         squareDiv.style.width = `${squareSize}px`;
         squareDiv.style.height = `${squareSize}px`;
-        squareDiv.style.opacity = '1'; // Default opacity
-
-        /* color randomizer for squares */
-        let colorOne = Math.floor(Math.random() * 256);
-        let colorTwo = Math.floor(Math.random() * 256);
-        let colorThree = Math.floor(Math.random() * 256);
 
         if (squareColor === 'random') {
             squareDiv.addEventListener('mouseover', function() {
+                 /* color randomizer for squares */
+                let colorOne = Math.floor(Math.random() * 256);
+                let colorTwo = Math.floor(Math.random() * 256);
+                let colorThree = Math.floor(Math.random() * 256);
+
+
                 squareDiv.style.backgroundColor = `rgb(${colorOne}, ${colorTwo}, ${colorThree})`;
             })};
 
@@ -36,6 +36,15 @@ function createSquares(squaresPerRow, squareColor = 'black') {
             squareDiv.addEventListener('mouseover', function() {
                 squareDiv.style.backgroundColor = 'black';
             })};
+
+        if (opacity === true) {
+            squareDiv.style.opacity = '0.1';
+            squareDiv.addEventListener('mouseover', function() {
+                let currentOpacity = parseFloat(squareDiv.style.opacity) || 1; // Default to 1 if not set
+                currentOpacity = Math.min(currentOpacity + 0.1, 1); // Ensure opacity doesn't exceed 1
+                squareDiv.style.opacity = currentOpacity;
+
+        })}
 
 
 
@@ -69,4 +78,23 @@ document.querySelector('#activate-random-colors').addEventListener('click', func
     } else {
         createSquares(16, 'random');
     };
+});
+
+// opacity function (random colors):
+document.querySelector('#toggle-opacity-random').addEventListener('click', function () {
+    let squaresPerRow = parseInt(document.querySelector('#squareInput').value);
+    if (!isNaN(squaresPerRow) && squaresPerRow > 0) {
+        createSquares(squaresPerRow, 'random', opacity = true);
+    } else {
+        createSquares(16, 'random', opacity = true);
+    }
+});
+//opacity function (black):
+document.querySelector('#toggle-opacity-black').addEventListener('click', function () {
+    let squaresPerRow = parseInt(document.querySelector('#squareInput').value);
+    if (!isNaN(squaresPerRow) && squaresPerRow > 0) {
+        createSquares(squaresPerRow, 'black', opacity = true);
+    } else {
+        createSquares(16, 'black', opacity = true);
+    }
 });
