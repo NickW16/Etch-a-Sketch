@@ -5,7 +5,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(rgb(26, 78, 26), rgb(144, 186, 144));
+    background-image: linear-gradient(rgb(52, 20, 78), rgb(0, 0, 0));
     margin: 0;
     height: 100vh;
 }
@@ -41,10 +41,21 @@ button:hover {
 
 /* end of button section */
 
+/* header section */
+
+#header {
+    text-align: center;
+    padding-top: 20px;
+}
+
 #title {
     font-family: Arial, Helvetica, sans-serif;
     color: aliceblue;
-    font-size: 30px;
+    font-size: 35px;
+}
+
+#info {
+    color: aliceblue;
 }
 
 /* drawing board section */
@@ -76,9 +87,13 @@ footer {
     text-align: center;
 }
 
-/* Aditional options: */
+/* Additional options: */
+#additional-options {
+    padding-bottom: 20px;
+}
 
 #options {
     text-align: center;
+    color: aliceblue;
 }
 
